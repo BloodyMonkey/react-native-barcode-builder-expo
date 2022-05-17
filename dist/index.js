@@ -156,7 +156,8 @@ var Barcode = function (ref) {
 
 
     var encoded = encoder.encode();
-    return encoded.reduce((p, n) => ({ data: `${p.data}${n.data || ''}`, text: `${p.text}${n.text || ''}` }), { data: '', text: ''});
+    return encoded;
+    // return encoded.reduce((p, n) => ({ data: `${p.data}${n.data || ''}`, text: `${p.text}${n.text || ''}` }), { data: '', text: ''});
   };
 
   var backgroundStyle = {
