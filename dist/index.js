@@ -156,8 +156,12 @@ var Barcode = function (ref) {
 
 
     var encoded = encoder.encode();
-    return encoded;
-    // return encoded.reduce((p, n) => ({ data: `${p.data}${n.data || ''}`, text: `${p.text}${n.text || ''}` }), { data: '', text: ''});
+    if(format === "EAN13"){
+      return encoded.reduce((p, n) => ({ data: `${p.data}${n.data || ''}`, text: `${p.text}${n.text || ''}` }), { data: '', text: ''});
+    }
+    else{
+      return encoded
+    }
   };
 
   var backgroundStyle = {
